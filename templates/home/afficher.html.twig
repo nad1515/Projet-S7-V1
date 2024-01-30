@@ -1,0 +1,29 @@
+<h1>bonjour Madame {{name}} {{prenom}}</h1>
+{# pour afficher une variable php la valeur "name" dans le controller on met entr deux accolades dans twig #}
+{% apply upper %}
+{{name}} {{prenom}}
+{% endapply %}
+<br>
+{% set sizes = [34, 36, 38, 40, 42] %}
+{{ sizes|join(', ') }}
+<br>
+{{ sizes|filter(v => v > 38)|join(', ') }}
+<br>
+
+{% apply upper %}
+<h1>bonjour Madame {{name}} {{prenom}}</h1>
+{% endapply %}
+<br>
+<h1>{% apply upper %}
+bonjour Madame {{name}} {{prenom}}
+{% endapply %}</h1>
+<br>
+<h2>{{'hamiche nadia'|capitalize }} </h2>
+<br>
+<h2> Aujourdhui c'est: {{ date }}</h2>
+{# {{ date_format|date("m/d/Y") }} #}
+
+<br>
+{% set date = [01,25,2024] %}
+{{ "now"|date("m/d/Y") }}
+{# {{ date_format|date("m/d/Y") }} #}

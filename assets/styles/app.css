@@ -1,3 +1,13 @@
 body {
-    background-color: skyblue;
+    background-color: rgb(169, 221, 231);
+}
+
+
+footer h1 {
+    text-align: center;
+  padding: 5px;
+  color: #000;
+    justify-content: center;
+text-align: center;
+background-color: blue;
 }

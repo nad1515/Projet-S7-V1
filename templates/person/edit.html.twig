@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block title %}Liste des personnes{% endblock %}
+{% block body %}
+<h1> Liste des Personnes </h1>
+<table border=1 width=75%>
+ <tr>
+    <TH>Nom </TH>
+    <TH>Prénom </TH>
+    <TH> Ville</TH>
+    <TH> Date de naissance</TH>
+    <TH> Adresse</TH>
+  </tr>
+  {% for person in persons %}
+  <tr>
+    <td> {{person.getNom() }} </td>
+    <td> {{person.getPrenom()}} </td>
+    <td> {{person.getVille()}} </td>
+    <td> {{person.getDate()|date('Y-m-d')}} </td>
+    <td> {{person.getAdresse()}} </td>
+     </tr>
+{% endfor %}
+</table>
+{% endblock %}
