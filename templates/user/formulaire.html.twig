@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{# 
+{% block body %}
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+{% endblock %} #}
+
+{% block body %}
+{{ form_start(form) }}
+{{ form_label(form.Prenom) }}
+{{ form_widget(form.Prenom) }}
+{{ form_label(form.Nom) }}
+{{ form_widget(form.Nom) }}
+{{ form_label(form.Email) }}
+{{ form_widget(form.Email) }}
+{{ form_rest(form) }}
+<button type="submit">Enregistrer</button>
+{{ form_end(form) }}
+{% endblock %}
