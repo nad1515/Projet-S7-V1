@@ -8,12 +8,12 @@
 
 {% block body %}
 {{ form_start(form) }}
-{{ form_label(form.Prenom) }}
-{{ form_widget(form.Prenom) }}
-{{ form_label(form.Nom) }}
-{{ form_widget(form.Nom) }}
-{{ form_label(form.Email) }}
-{{ form_widget(form.Email) }}
+{{ form_label(user.Prenom) }}
+{{ form_widget(user.Prenom) }}
+{{ form_label(user.Nom) }}
+{{ form_widget(user.Nom) }}
+{{ form_label(user.Email) }}
+{{ form_widget(user.Email) }}
 {{ form_rest(form) }}
 <button type="submit">Enregistrer</button>
 {{ form_end(form) }}

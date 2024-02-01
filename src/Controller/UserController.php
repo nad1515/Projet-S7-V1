@@ -11,6 +11,7 @@ use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 
 
+
 class UserController extends AbstractController
 {     
     // 
@@ -26,8 +27,8 @@ class UserController extends AbstractController
     
     #[Route('/forme', name: 'forme_user')]
     public function forme(): Response
-    {
-        $form = $this->createForm(UserType::class);
+    {      $user= new User();
+        $form = $this->createForm(UserType::class, $user);
           return $this->render('user\formulaire.html.twig', [
          'form' => $form->createView()
          ]);

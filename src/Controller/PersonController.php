@@ -34,7 +34,7 @@ class PersonController extends AbstractController
         $entityManager->persist($person);
 
         $entityManager->flush();
-// ....................................pour extraire un element d'un objet en php on met -> mais en twig on met un .(point)$person->getId()  et getid pour avoir accé a un prvate attribut
+// ....................................pour extraire un element d'un objet en php on met -> mais en twig on met un .(point)$person->getId()  et getid pour avoir accé a un prvate attribut avec symfony on ecri getid ou $person.id
         return new Response('Saved new person with id ' .$person->getId());
       }
 
@@ -44,6 +44,7 @@ class PersonController extends AbstractController
     {
         return $this->render('person/all_persons.html.twig', [
             'persons' =>$personRepository->findAll(),
+            // $personRepository est l'objet a instancier de la class PersonRepository, avec la fonction findAll de la meme class, c'est la requete pour l'orm qui communique avec la BDD
         ]);
     }
 
@@ -66,7 +67,7 @@ class PersonController extends AbstractController
     public function edit(int $id, PersonRepository $personRepository)
         {
         $person = $personRepository->find($id);
-        //var_dump($personne);
+        // var_dump($person);
 
         return $this->render('person/edit.html.twig', [
             'persons' => $person,
